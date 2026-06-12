@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct _1_API_NetworkingApp: App {
+    
+    @State private var auth = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(auth)
         }
     }
 }
