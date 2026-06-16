@@ -10,22 +10,9 @@
 		3C78D7042FDCBF2B003ED6C4 /* 02-Networking-NewsAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "02-Networking-NewsAPI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3C78D7492FE0A7FC003ED6C4 /* Exceptions for "02-Networking-NewsAPI" folder in "02-Networking-NewsAPI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"-2-Networking-NewsAPI-Info.plist",
-			);
-			target = 3C78D7032FDCBF2B003ED6C4 /* 02-Networking-NewsAPI */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3C78D7062FDCBF2B003ED6C4 /* 02-Networking-NewsAPI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3C78D7492FE0A7FC003ED6C4 /* Exceptions for "02-Networking-NewsAPI" folder in "02-Networking-NewsAPI" target */,
-			);
 			path = "02-Networking-NewsAPI";
 			sourceTree = "<group>";
 		};
