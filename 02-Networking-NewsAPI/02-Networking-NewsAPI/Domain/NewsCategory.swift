@@ -16,4 +16,16 @@ enum NewsCategory: String, CaseIterable {
     case science
     case sports
     case technology
+    
+    var title: String {
+           switch self {
+           case .business: "Business"
+           case .entertainment: "Entertainment"
+           case .general: "General"
+           case .health: "Health"
+           case .science: "Science"
+           case .sports: "Sports"
+           case .technology: "Technology"
+           }
+       }
 }

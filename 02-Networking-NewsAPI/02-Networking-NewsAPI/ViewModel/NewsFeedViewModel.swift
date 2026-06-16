@@ -11,14 +11,8 @@ import Observation
 @MainActor
 @Observable
 final class NewsFeedViewModel {
-    
-    enum Tab {
-        case topHeadlines
-        case everything
-        //        case category(String)
-    }
     var articles: [Article] = []
-    var selectedTab: Tab = .topHeadlines
+    var selectedTab: NewsTab = .everything
     var selectedCategory: NewsCategory = .technology
     var isLoading = false
     
@@ -35,7 +29,7 @@ final class NewsFeedViewModel {
             switch selectedTab {
             case .everything:
                 articles = try await APIClient.shared.fetchEverything(
-                    query: "technology",
+                    query:  selectedCategory.rawValue,
                     domains: nil
                 )
                 
