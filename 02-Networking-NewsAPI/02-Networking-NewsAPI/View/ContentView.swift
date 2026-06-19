@@ -55,7 +55,7 @@ struct ContentView: View {
         }
         .navigationTitle(nfVM.selectedCategory.title)
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $nfVM.searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search news")
+        .searchableIfEverything(nfVM)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
