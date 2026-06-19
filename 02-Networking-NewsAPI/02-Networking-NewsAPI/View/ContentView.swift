@@ -45,29 +45,17 @@ struct ContentView: View {
                 }
             }
         }
-        .safeAreaInset(edge: .bottom) {
-            NewsTabBarView(
-                selectedTab: $nfVM.selectedTab
-            )
-            .padding(.horizontal)
-            .padding(.vertical, 18)
-            .background(Color.white)
-        }
         .task {
             await nfVM.fetch()
         }
-        .onChange(of: nfVM.selectedTab) {
-            Task {
-                await nfVM.fetch()
-            }
-        }
-        .onChange(of: nfVM.selectedCategory) {
+        .onChange(of: nfVM.feedState) {
             Task {
                 await nfVM.fetch()
             }
         }
         .navigationTitle(nfVM.selectedCategory.title)
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
+        .searchable(text: $nfVM.searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search news")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
@@ -75,7 +63,7 @@ struct ContentView: View {
                         ForEach(NewsCategory.allCases, id: \.self) { category in
                             Button(category.title) {
                                 nfVM.selectedCategory = category
-                            } 
+                            }
                         }
                         
                     }
@@ -83,6 +71,14 @@ struct ContentView: View {
                     Image(systemName: "slider.horizontal.3")
                 }
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            NewsTabBarView(
+                selectedTab: $nfVM.selectedTab
+            )
+            .padding(.horizontal)
+            .padding(.vertical, 18)
+            .background(Color.white)
         }
     }
 }
