@@ -30,7 +30,7 @@ final class APIClient {
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        print("🔑 API KEY VALUE:", AppConfig.apiKey)
+//        print("🔑 API KEY VALUE:", AppConfig.apiKey)
         request.setValue(AppConfig.apiKey, forHTTPHeaderField: "X-Api-Key")
         
         // MARK: Body
@@ -40,9 +40,9 @@ final class APIClient {
         }
         
         // MARK: Debug
-        print("🌍 URL:", url.absoluteString)
-        print("📨 METHOD:", endpoint.method)
-        
+//        print("🌍 URL:", url.absoluteString)
+//        print("📨 METHOD:", endpoint.method)
+//        
 //        if let bodyData = request.httpBody {
 //            print("📦 BODY:")
 //            print(String(data: bodyData, encoding: .utf8) ?? "nil")
@@ -57,8 +57,10 @@ final class APIClient {
             throw NetworkError.invalidResponse
         }
         
-        print("📡 STATUS:", httpResponse.statusCode)
-//        print("📥 RESPONSE:", String(data: data, encoding: .utf8) ?? "nil")
+//        print("📡 STATUS:", httpResponse.statusCode)
+        if let first =  String(data: data, encoding: .utf8) {
+            print("📥 RESPONSE:", first)
+        }
         
         guard (200...209).contains(httpResponse.statusCode) else {
             throw NetworkError.serverError(statusCode: httpResponse.statusCode)
