@@ -32,8 +32,9 @@ struct ContentView: View {
                 NewsTabBarView(
                     selectedTab: $nfVM.selectedTab
                 )
-                .frame(maxWidth:.infinity)
-                .background(.white)
+                .padding(.horizontal)
+                .padding(.vertical, 18)
+                .background(Color.white)
             }
             .task {
                 print("TASK FIRED")
