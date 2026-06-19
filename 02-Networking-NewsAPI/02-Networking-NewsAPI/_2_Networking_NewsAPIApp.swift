@@ -12,8 +12,10 @@ struct _2_Networking_NewsAPIApp: App {
     @State private var nfVM = NewsFeedViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(nfVM)
+            NavigationStack {
+                ContentView()
+                    .environment(nfVM)
+            }
         }
     }
 }
