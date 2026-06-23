@@ -31,7 +31,7 @@ extension Article {
         description: "Apple improves navigation patterns in SwiftUI apps.",
         url: "https://example.com",
         urlToImage: "https://hackaday.com/wp-content/uploads/2026/05/rip_so_digital_graveyard.jpg",
-        publishedAt: "2026-06-19",
+        publishedAt: "2026-06-08T06:00:00Z",
         content: "Full article content shown here for preview purposes."
     )
 }

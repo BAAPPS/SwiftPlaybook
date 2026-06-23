@@ -16,6 +16,7 @@ struct ContentView: View {
                 ForEach(nfVM.articles, id: \.url) { article in
                     NavigationLink {
                         ArticleDetailView(article: article)
+                            .environment(nfVM)
                     } label: {
                         VStack(alignment:.leading, spacing:6) {
                             VStack(spacing:10) {
@@ -24,10 +25,7 @@ struct ContentView: View {
                                     .foregroundStyle(Color.black.opacity(0.7))
                                     .multilineTextAlignment(.center)
                                 
-                                Rectangle()
-                                    .fill(Color.gray.opacity(0.5))
-                                    .frame(width: 60, height: 1)
-                                    .frame(maxWidth: .infinity)
+                                HorizontalDivider()
                                 
                                 Text(article.source.name)
                                     .font(.system(size:15, weight:.regular))

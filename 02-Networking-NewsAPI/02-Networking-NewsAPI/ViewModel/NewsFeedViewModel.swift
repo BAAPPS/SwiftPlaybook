@@ -69,4 +69,22 @@ final class NewsFeedViewModel {
             print("Error:", error)
         }
     }
+    
+    func formatStringDate(_ dateString: String) -> String {
+//        print("Received:", dateString)
+        
+        let isoFormatter = ISO8601DateFormatter()
+
+        guard let date = isoFormatter.date(from: dateString) else {
+            print("Failed to parse")
+            return "Invalid Date"
+        }
+        
+//        print("Parsed:", date)
+        
+        return date.formatted(
+            date: .abbreviated,
+            time: .omitted
+        )
+    }
 }
