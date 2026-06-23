@@ -52,6 +52,15 @@ Each folder represents one isolated concept:
 * Generic API client
 * MVVM data flow
 
+### 01 - API Networking & Decodable
+
+* URLSession + async/await
+* JSON decoding with Decodable
+* NewsAPI endpoints
+* MVVM data flow
+* Searchable 
+
+
 ---
 
 ### (More modules coming)
