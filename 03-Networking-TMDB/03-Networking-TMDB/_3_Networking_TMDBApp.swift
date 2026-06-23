@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct _3_Networking_TMDBApp: App {
+    @State private var movieVM = MovieViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                ContentView()
+                    .environment(movieVM)
+            }
         }
     }
 }

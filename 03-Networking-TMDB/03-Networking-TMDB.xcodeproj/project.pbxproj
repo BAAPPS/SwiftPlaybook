@@ -10,22 +10,9 @@
 		3CC15CCB2FEB1ACD001698DF /* 03-Networking-TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "03-Networking-TMDB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3CC15D1C2FEB1FA8001698DF /* Exceptions for "03-Networking-TMDB" folder in "03-Networking-TMDB" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"-3-Networking-TMDB-Info.plist",
-			);
-			target = 3CC15CCA2FEB1ACD001698DF /* 03-Networking-TMDB */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3CC15CCD2FEB1ACD001698DF /* 03-Networking-TMDB */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3CC15D1C2FEB1FA8001698DF /* Exceptions for "03-Networking-TMDB" folder in "03-Networking-TMDB" target */,
-			);
 			path = "03-Networking-TMDB";
 			sourceTree = "<group>";
 		};
