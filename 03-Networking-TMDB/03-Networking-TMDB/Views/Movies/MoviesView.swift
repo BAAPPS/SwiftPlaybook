@@ -14,13 +14,34 @@ struct MoviesView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(moviesVM.movies, id: \.id) { movie in
-                    MovieRowView(movie:movie)
+                Section {
+                    ForEach(moviesVM.movies, id: \.id) { movie in
+                        MovieRowView(movie:movie)
+                            .onAppear {
+                                Task {
+                                    await moviesVM.loadMoreIfNeeded(for: movie)
+                                }
+                            }
+                    }
+                } header: {
+                    HStack{
+                        Text("\(moviesVM.totalResults.formatted())")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(.black.opacity(0.7))
+                        Text("movies found")
+                            .font(.system(size: 18))
+                            .foregroundStyle(.black.opacity(0.7))
+                        
+                    }
+                    .frame(maxWidth:.infinity, alignment: .center)
+                }
+                if moviesVM.isLoading {
+                    ProgressView()
                 }
             }
-            .listStyle(.plain)
+            
         }
-        .navigationTitle("Discover Movies")
+        .navigationTitle("Future Movies")
         .navigationBarTitleDisplayMode(.large)
         .task {
             await moviesVM.fetchMovies()

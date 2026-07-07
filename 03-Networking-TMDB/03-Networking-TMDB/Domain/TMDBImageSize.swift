@@ -10,5 +10,6 @@ import Foundation
 enum TMDBImageSize: String {
     case w200
     case w500
+    case w780
     case original
 }
