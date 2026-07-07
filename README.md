@@ -1,152 +1,192 @@
 # SwiftPlaybook
 
-A Swift & SwiftUI learning system built around **MVVM architecture**.
-Each module isolates a single iOS concept and implements it in a **reusable, production-style structure**.
+A Swift & SwiftUI learning system focused on building **production-style iOS development patterns** through modular MVVM implementations.
 
-This is not a collection of tutorials—it is a **modular architecture practice system** for building real-world iOS thinking.
+This repository is not a collection of tutorials or isolated experiments.
+
+Each module takes a single iOS concept, applies it to a real-world scenario, and turns it into a reusable architecture pattern.
 
 ---
 
 ## Core Philosophy
 
-Instead of learning Swift as isolated topics, this repo treats each concept as a **system module**:
+Instead of memorizing Swift and SwiftUI APIs individually, this repo focuses on learning through systems:
 
-> One concept → One MVVM implementation → One reusable pattern
+> One concept → One real-world implementation → One reusable pattern
 
-Each module is designed to be:
+Each module is designed to:
 
-* Reusable in real apps
-* Architecturally clean (MVVM-first)
-* Closely aligned with production iOS development
-* Easy to revisit when building new features
+- Build practical iOS architecture intuition
+- Follow production-style MVVM patterns
+- Isolate and master individual concepts
+- Create reusable solutions for future applications
 
 ---
 
 ## Architecture Standard (MVVM)
 
-Every module follows the same structure:
+Every module follows the same architectural structure:
 
 ```
-View → ViewModel → Model
-        ↓
-   Networking / Services
-```
+             Services
+                |
+                ↓
 
-### Responsibilities:
-
-* **View (SwiftUI):** UI only, no business logic
-* **ViewModel:** State + business logic + data transformation
-* **Model:** Data structures (Codable where needed)
-* **Services:** Networking / persistence / external interactions
-
----
-
-## Modules
-
-Each folder represents one isolated concept:
-
-### 01 - API Networking & Codable
-
-* URLSession + async/await
-* JSON decoding with Codable
-* Generic API client
-* MVVM data flow
-
-### 01 - API Networking & Decodable
-
-* URLSession + async/await
-* JSON decoding with Decodable
-* NewsAPI endpoints
-* MVVM data flow
-* Searchable 
-
-
----
-
-### (More modules coming)
-
-Planned additions:
-
-* State Management (Published / ObservedObject / StateObject)
-* Search & Filtering Logic
-* Pagination & Infinite Scroll
-* Caching Strategies
-* Error Handling Patterns
-* SwiftData Persistence
-* Authentication Flow Design
-
----
-
-## Project Structure
-
-Each module follows this consistent layout:
+View  →  ViewModel  →  Model
+|
+↓
+State
 
 ```
-ModuleName/
-│
-├── App/            # Entry point (SwiftUI App)
-├── View/           # UI Layer
-├── ViewModel/      # State + Logic
-├── Model/          # Data structures
-├── Networking/     # API / services (if needed)
-└── Notes/          # Learning notes + insights
-```
+
+### Responsibilities
+
+### View (SwiftUI)
+- Responsible only for UI rendering
+- Displays state from the ViewModel
+- Handles user interaction events
+
+### ViewModel
+- Owns screen state
+- Contains business logic
+- Coordinates data flow between services and views
+
+### Model
+- Represents application data
+- Handles Codable/API response structures when needed
+
+### Services
+- Networking
+- Persistence
+- External integrations
+- System interactions
 
 ---
 
-## Goals of This Repo
+# Modules
 
-This repository is designed to help:
-
-* Build **real-world iOS architecture intuition**
-* Understand how MVVM scales across features
-* Turn isolated concepts into reusable systems
-* Bridge the gap between learning Swift and building production apps
+Each module focuses on one concept and applies it through a reusable MVVM implementation.
 
 ---
 
-## How to Use This Repo
+## 01 - API Networking & Codable
 
-You should NOT just browse it.
+Foundation networking patterns.
 
-Instead:
+Implemented concepts:
 
-1. Pick a concept (e.g. API Networking)
-2. Rebuild it from scratch
-3. Modify it for a real app use-case
-4. Reuse the pattern in future projects
-
----
-
-## Why This Exists
-
-Most Swift learning is fragmented:
-
-* Tutorials are isolated
-* Concepts are not reusable
-* Architecture is not emphasized
-
-This repo solves that by building a **repeatable system for learning Swift like an engineer, not a viewer**.
+- URLSession with async/await
+- Codable JSON parsing
+- Generic API client
+- API request lifecycle
+- MVVM data flow
 
 ---
 
-## Future Vision
+## 02 - API Networking & NewsAPI
 
-This SwiftPlaybook will evolve into:
+Building real-world API features on top of networking fundamentals.
 
-* A personal iOS architecture library
-* A reusable blueprint for all future apps
-* A reference system for production SwiftUI development
+Implemented concepts:
 
----
-
-## Tech Stack
-
-* Swift 6+
-* SwiftUI
-* MVVM Architecture
-* async/await networking
-* Codable JSON parsing
+- External API integration
+- Decodable response modeling
+- Query parameter handling
+- Search functionality
+- MVVM feature structure
+- Async image loading
 
 ---
 
+## 03 - API Networking & TMDB Discovery
+
+Applying networking patterns to a movie discovery application.
+
+Implemented concepts:
+
+- TMDB API endpoint integration
+- Generic paginated responses
+- Infinite scrolling pagination
+- Async image loading
+- Movie list and detail navigation
+- MVVM state management
+
+---
+
+## Future Modules
+
+Planned concepts:
+
+- State Management
+    - @State
+    - @Binding
+    - @Observable
+    - ObservableObject patterns
+
+- Search & Filtering Systems
+
+- Advanced Pagination Patterns
+
+- Caching Strategies
+
+- Error Handling Architectures
+
+- SwiftData Persistence
+
+- Authentication Flow Design
+
+- Dependency Injection
+
+---
+
+# Learning Approach
+
+This repository is designed for active learning.
+
+Do not simply browse the modules.
+
+The intended workflow:
+
+1. Choose a concept
+2. Rebuild the implementation from scratch
+3. Understand the architectural decisions
+4. Modify it for a different real-world scenario
+5. Reuse the pattern in future applications
+
+The goal is not to memorize code.
+
+The goal is to build engineering intuition.
+
+---
+
+# Why This Exists
+
+Many Swift learning resources teach concepts in isolation:
+
+- APIs without architecture
+- SwiftUI without state management
+- Features without reusable patterns
+
+SwiftPlaybook bridges that gap by turning individual concepts into complete, repeatable systems.
+
+---
+
+# Future Vision
+
+SwiftPlaybook will evolve into:
+
+- A personal iOS architecture reference
+- A reusable blueprint for future applications
+- A collection of production-inspired SwiftUI patterns
+
+---
+
+# Tech Stack
+
+- Swift 6+
+- SwiftUI
+- MVVM Architecture
+- async/await Concurrency
+- Codable JSON Parsing
+- URLSession Networking
+- SwiftData (future modules)
