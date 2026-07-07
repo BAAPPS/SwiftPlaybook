@@ -20,7 +20,14 @@ struct MovieDetailView: View {
                             .resizable()
                             .scaledToFill()
                     default:
-                        Color.gray
+                        ZStack {
+                            Color.gray
+                            Text("Coming Soon")
+                                .foregroundStyle(.white)
+                                .iconRow("photo.artframe", .white)
+                                .font(.system(size: 25, weight: .semibold))
+                        }
+                        .frame(height: 500)
                     }
                 }
                 .frame(maxWidth: .infinity)

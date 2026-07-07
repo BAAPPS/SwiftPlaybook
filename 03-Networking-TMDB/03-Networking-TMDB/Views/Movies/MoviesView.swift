@@ -16,12 +16,17 @@ struct MoviesView: View {
             List {
                 Section {
                     ForEach(moviesVM.movies, id: \.id) { movie in
-                        MovieRowView(movie:movie)
-                            .onAppear {
-                                Task {
-                                    await moviesVM.loadMoreIfNeeded(for: movie)
-                                }
+                        
+                        NavigationLink {
+                            MovieDetailView(movie: movie)
+                        }  label: {
+                            MovieRowView(movie: movie)
+                        }
+                        .onAppear {
+                            Task {
+                                await moviesVM.loadMoreIfNeeded(for: movie)
                             }
+                        }
                     }
                 } header: {
                     HStack{

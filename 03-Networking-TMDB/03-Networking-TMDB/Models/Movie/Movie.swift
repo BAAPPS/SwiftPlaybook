@@ -53,6 +53,7 @@ extension Movie {
         return URL(string: "\(TMDBImage.baseURL)/\(size.rawValue)\(backdropPath)")
     }
     
+
     static let mock = Movie(
         adult: false,
         backdropPath: "/6tROOVmV5vRymO2g52aR8kWlfoT.jpg",
